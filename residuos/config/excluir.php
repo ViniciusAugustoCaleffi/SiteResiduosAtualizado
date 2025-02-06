@@ -1,23 +1,26 @@
 <?php
-    namespace PHP\Modelo\config;
-    require_once('Conexao.php');
-    use PHP\Modelo\DAO\Conexao;
- 
- 
-    class Excluir{
-        function excluirPesagem(Conexao $conexao, int $codigo){
-            $conn = $conexao->conectar();
-            $sql = "delete from peso where codigo = '$codigo'";
-            $result = mysqli_query($conn,$sql);
-            mysqli_close($conn);
- 
-            if($result){
-                echo "Deletado com sucesso!";
-            }else{
-                echo "Não deletado!";
+namespace PHP\Modelo\Config;
+
+class Excluir {
+
+    public function excluirPesagem(Conexao $conexao, int $codigo) {
+        // Obtendo a conexão
+        $conn = $conexao->getConnection();
+
+        // Prepare statement para excluir o registro
+        $sql = "DELETE FROM pesagem_residuos WHERE id = ?";
+        
+        if ($stmt = $conn->prepare($sql)) {
+            // Bind the parameter
+            $stmt->bind_param("i", $codigo); // "i" é para inteiro
+            if ($stmt->execute()) {
+                return "Pesagem excluída com sucesso!";
+            } else {
+                return "Erro ao excluir pesagem: " . $stmt->error;
             }
+        } else {
+            return "Erro no comando SQL: " . $conn->error;
         }
- 
- 
-    }//fim da classe
+    }
+}
 ?>

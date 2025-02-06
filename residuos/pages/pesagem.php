@@ -15,9 +15,19 @@
 
     <div class="container">
         <form class="form" action="processa_pesagem.php" method="POST">
+            <!-- Campo ID -->
+            <label for="id">ID:</label>
+            <input type="text" name="id" required>
+
+            <!-- Campo Nome -->
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" required>
+
+            <!-- Campo Data -->
             <label for="data">Data:</label>
             <input type="date" name="data" required>
 
+            <!-- Campo Categoria -->
             <label for="categoria">Categoria:</label>
             <select name="categoria" required>
                 <option value="não reciclável">Não Reciclável</option>
@@ -40,9 +50,15 @@
                 <option value="cartela de medicamento">Cartela de Medicamento</option>
             </select>
 
+            <!-- Campo Peso -->
             <label for="peso">Peso (kg):</label>
             <input type="number" name="peso" step="0.01" required>
 
+            <!-- Campo Destino -->
+            <label for="destino">Destino da pesagem:</label>
+            <input type="text" name="destino" required>
+
+            <!-- Botão de envio -->
             <button type="submit" class="btn">Salvar</button>
         </form>
 
