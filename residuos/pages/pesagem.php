@@ -10,7 +10,7 @@
 <body>
 
     <nav class="navbar">
-        <h1>Registrar Pesagem</h1>
+            <img src="../imagens/LogoEcoeficienciaAntigo02-removebg-preview.png" height="100px">
     </nav>
 
     <div class="container">

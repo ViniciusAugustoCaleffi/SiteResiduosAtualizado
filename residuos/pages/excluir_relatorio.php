@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tCodigo'])) {
         $mensagem = "Por favor, informe um ID válido.";
     }
 } else {
-    $mensagem = "Preencha o ID para excluir a pesagem."; // Mensagem padrão
+    $mensagem = ""; // Mensagem padrão
 }
 ?>
 
@@ -39,9 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tCodigo'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navImage">
+            <img src="../imagens/LogoEcoeficienciaAntigo02-removebg-preview.png" height="100px">
+        </div>
+    </nav>  
+
+
     <div class="container mt-5">
-        <h2>Excluir Pesagem</h2>
-        
+        <div class="h1Relatorio">
+            <h1>Excluir Pesagem</h1>
+        </div>
         <!-- Formulário para excluir pesagem -->
         <form method="POST" action="">
             <div class="mb-3">
@@ -55,9 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tCodigo'])) {
 
         <!-- Exibindo a mensagem -->
         <div class="mt-3">
-            <p><?php echo $mensagem; ?></p>
+             <p class="mensagem-branca"><?php echo $mensagem; ?></p>
         </div>
+
     </div>
-    <a href="../index.php"><button class="btn">Voltar para a Página Inicial</button></a>
+    <a href="../index.php" class="btn btn-">Voltar para a Página Inicial</a>
+
 </body>
 </html>

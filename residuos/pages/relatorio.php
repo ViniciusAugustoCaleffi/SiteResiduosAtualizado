@@ -25,12 +25,19 @@ $result = mysqli_query($conn, $sql); // Passando a conexão corretamente para a 
 <head>
     <meta charset="UTF-8">
     <title>Relatório de Pesagens</title>
-    <link rel="stylesheet" href="../styles.css"> <!-- Caminho corrigido para o CSS -->
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
+    
+    <nav class="navbar">
+            <img src="../imagens/LogoEcoeficienciaAntigo02-removebg-preview.png" height="100px">
+    </nav>
+
     <div class="container">
-        <h1>Relatório de Pesagens</h1>
+        <div class="h1Relatorio">
+            <h1>Relatório de Pesagens</h1>
+        </div>
         
         <!-- Tabela de Relatório -->
         <table border="1" class="table table-striped">

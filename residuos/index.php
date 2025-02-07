@@ -8,7 +8,10 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1>Controle de Resíduos</h1>
+        <div class="navImage">
+            <img src="imagens/LogoEcoeficienciaAntigo02-removebg-preview.png" height="100px">
+        </div>
+        
     </nav>
 
     <div class="container">
