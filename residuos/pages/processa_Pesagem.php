@@ -24,9 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria = $_POST['categoria'];
     $peso = $_POST['peso'];
 
-    // Evitar SQL Injection utilizando prepared statements
-    $stmt = $conn->prepare("INSERT INTO pesagem_residuos (id, nome, destino, data, categoria, peso) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("issdss", $id, $nome, $destino, $data, $categoria, $peso); // "issdss" indica que id é inteiro, nome e destino são strings, data é string, categoria e peso são strings e decimal
 
     if ($stmt->execute()) {
         echo "Registro inserido com sucesso!";
